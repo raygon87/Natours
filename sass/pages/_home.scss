@@ -1,0 +1,202 @@
+.section-about {
+
+    grid-column: full-start / full-end;
+    padding: 30rem 0;
+    background-color: $color-grey-light-1;
+    margin-top: -20rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, 57rem - 3rem));
+    grid-template-rows: 10rem auto;
+    justify-content: center;
+    grid-gap: 5rem;
+
+    @include respond(tab-port) {
+        padding: 25rem 2rem;
+        grid-gap: 2.5rem;
+    }
+
+    @include respond(750px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content;
+        grid-gap: 0;
+        grid-row-gap: 3rem;
+        padding: 26rem 1rem 18rem 1rem;
+    }
+
+    @include respond(phone) {
+        grid-gap: 2.5rem;
+    }
+}
+
+.about {
+
+    &__heading {
+        grid-column: 1 / -1;
+        justify-self: center;
+        text-align: center;
+        margin-bottom: 5rem;
+
+        @include respond(750px) {
+            grid-column: 1 / span 2;
+            grid-row:  1 / 1;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__text {
+        grid-column: 1 / 2;
+        padding-left: 2rem;
+
+        @include respond(750px) {
+            grid-column: 1 / span 2;
+            grid-row:  2 / 3;
+        }
+
+    }
+
+    &__composition {
+        grid-column: 2 / 3;
+
+        @include respond(750px) {
+            grid-column: 3 / -1;
+            grid-row:  3 / 4;
+        }
+    }
+
+    &__btn {
+        margin-left: 2rem;
+
+        @include respond(750px) {
+            grid-column: 1 / span 2;
+            grid-row: 4 / 5;
+            margin-top: 4rem;
+            justify-self: center;
+        }
+    }
+}
+
+///////////////////
+
+.section-features {
+    grid-column: full-start / full-end;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, .9), rgba($color-primary-dark, .9)), url(../img/nat-4.jpg);
+    background-size: cover; 
+    background-position: top;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+    padding: 12rem 0;
+
+    display: grid;
+    grid-template-columns: $grid;
+    grid-template-rows: auto;
+
+    @include respond(tab-port) {
+        padding: 8rem 3rem;
+    }
+
+    @include respond(450px) {
+        padding: 5rem 2rem;
+    }
+
+    @include respond(phone) {
+        padding: 5rem 1rem;
+    }
+}
+
+
+//////////////////////
+// section tours
+.section-tours {
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: $grid;
+    grid-template-rows: 15rem auto;
+    
+    background-color: $color-grey-light-1;
+    padding: 30rem 0 15rem 0;
+    margin-top: -10rem;
+
+    @include respond(tab-port) {
+        padding: 24rem 2rem 10rem 2rem;
+    }
+}
+
+.tours {
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 6rem;
+
+    @include respond(small-phone) {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+
+    &__heading {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    &__btn {
+        grid-column: col-start 4 / col-end 5;
+        justify-self: center;
+        margin-top: 10rem;
+    }
+}
+
+.section-stories {
+    grid-column: full-start / full-end;
+
+    position: relative;
+    padding: 15rem 0;
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+
+    @include respond(phone) {
+        padding: 7rem 0;
+    }
+}
+
+.section-booking {
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    grid-column: full-start / full-end;
+    padding: 14rem 0;
+
+    @include respond(tab-land) {
+        padding: 7rem 0;
+    }
+}
+
+.book {
+    width: 70%;
+    margin: 0 auto;
+    background-image: linear-gradient(105deg, rgba($color-white, .9) 0%,
+                                              rgba($color-white, .9) 50%,
+                                              transparent 50%),
+                                              url(../img/nat-10.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 6rem;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+
+    @include respond(tab-land) {
+        width: 95%;
+        padding: 3rem;
+    }
+
+    @include respond(750px) {
+        background-image: linear-gradient(rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 100%),
+        url(../img/nat-10.jpg);
+        padding: 6rem;
+    }
+
+    @include respond(phone) {
+        padding: 3rem;
+    }
+}

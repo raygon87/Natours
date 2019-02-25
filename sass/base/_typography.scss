@@ -1,0 +1,98 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    color: $color-grey-dark;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    &--main {
+        font-size: 6rem;
+        letter-spacing: 3rem;
+        display: block;
+        animation: moveInLeft 1.2s ease-in-out;
+
+        @include respond(phone) {
+            font-size: 5rem;
+            letter-spacing: 2.5rem;
+        }
+
+        @include respond(450px) {
+            font-size: 5rem;
+            letter-spacing: 1.7rem;
+            animation: moveInLeft .7s ease-in-out;
+        }
+
+        @include respond(small-phone) {
+            font-size: 4.7rem;
+            letter-spacing: 1.4rem;
+        }
+
+        @include respond(xsmall-phone) {
+            animation: none;
+        }
+    }
+
+    &--sub {
+        font-size: 2.2rem;
+        letter-spacing: 1.1rem;
+        display: block;
+        font-weight: 700;
+        animation: moveInRight 1.2s ease-in-out;
+        
+        @include respond(phone) {
+            font-size: 1.8rem;
+            letter-spacing: .6rem;
+        }
+
+        @include respond(450px) {
+            animation: moveInRight .7s ease-in-out;
+        }
+
+        @include respond(small-phone) {
+            font-size: 1.7rem;
+            letter-spacing: .4rem;
+        }
+
+        @include respond(xsmall-phone) {
+            animation: none;
+        }
+    }   
+}
+
+.heading-secondary {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    letter-spacing: .15rem;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+
+    @include respond(750px) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+}
+
+.heading-tertiary {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+
+
+.paragraph {
+    
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}

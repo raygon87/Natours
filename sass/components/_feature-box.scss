@@ -1,0 +1,50 @@
+.feature {
+    padding: 10rem 0;
+    text-align: center;
+
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-rows: min-content;
+    grid-gap: 5rem;
+    
+    transform: skewY(7deg);
+
+    @include respond(750px) {
+        grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+        grid-gap: 3rem;
+    }
+
+    @include respond(phone) {
+        grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
+    }
+    
+    &__box {
+        background-color: rgba($color-white, .75);
+        padding: 2.5rem;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        border-radius: 3px;
+        transition: all .2s;
+
+        @include respond(750px) {
+            padding: 2rem;
+        }
+
+        &:hover {
+            transform: translateY(-.5rem) scale(1.01);
+            box-shadow: 0 2rem 4rem rgba($color-black, .3);
+        }
+    }
+
+    &__icon {
+        height: 7rem;
+        width: 7rem;
+        fill: rgba($color-primary-light, .9);
+        margin-bottom: 2rem;
+
+        @include respond(750px) {
+            margin-bottom: 1rem;
+        }
+    }
+}

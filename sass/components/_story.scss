@@ -1,0 +1,97 @@
+.story {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    max-width: 60%;
+    margin: 0 auto;
+
+    @include respond(tab-port) {
+        max-width: 80%;
+    }
+
+    @include respond(phone) {
+        max-width: 95%;
+    }
+
+    &__box {
+       padding: 5rem;
+       background-color: rgba($color-white, .6);
+       transform: skewX(-15deg);
+       box-shadow: 0 2rem 4rem rgba($color-black, .12);
+
+       @include respond(phone) {
+            transform: skewX(0);
+            padding: 3rem;
+       }
+
+       &:hover .story__caption {
+            top: 50%;
+            opacity: 1;
+        }
+
+       &:hover .story__img {
+            transform: scale(1) translate(-3.5rem);
+            filter: blur(4px) brightness(80%);
+        }
+       
+       &:not(:last-child) {
+           margin-bottom: 10rem;
+       }
+       
+       @include respond(phone) {
+           &:not(:last-child) {
+               margin-bottom: 7rem;
+           }
+       }
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+
+    &__picture-box {
+        float: left;
+        height: 15rem;
+        width: 15rem;
+        -webkit-clip-path: circle(50% at 50%  50%);
+                clip-path: circle(50% at 50%  50%);
+        shape-outside:circle(50% at 50%  50%);
+        margin-right: 4rem;
+        transform: skewX(15deg);
+        position: relative;
+        backface-visibility: hidden;
+        text-align: center;
+
+        @include respond(phone) {
+            transform: skewX(0);
+           }
+    }
+
+    &__img {
+        height: 100%;
+        transform: scale(1.4) translate(-2.3rem);
+        transition: all .4s;
+    }
+
+    &__text {
+        transform: skewX(15deg);
+
+        @include respond(phone) {
+            transform: skewX(0);
+           }
+    }
+
+    &__caption {
+        color: $color-white;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        transition: all .4s;
+        opacity: 0;
+        letter-spacing: 1px;
+    }
+}
+

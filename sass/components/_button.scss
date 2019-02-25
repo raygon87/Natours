@@ -1,0 +1,105 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.7rem 4rem;
+        border-radius: 10rem;
+        font-weight: 400;
+        position: relative;
+        display: inline-block;
+        transition: all .2s;
+
+        @include respond(450px) {
+            padding: 1.7rem 2rem;
+            font-size: 1.4rem;
+        }
+
+        @include respond(small-phone) {
+            padding: 1.5rem 2rem;
+            font-size: 1.2rem;
+        }
+    }
+    
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: blue;
+        border-radius: 10rem;
+        opacity: 1;
+        z-index: -1;
+        display: inline-block;
+        background-color: $color-white;
+        transition: all .3s;
+    }
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        transform: translateY(-.3rem);
+
+        &::after {
+            opacity: 0;
+            transform: scale(1.2, 1.7);
+        }
+    }
+
+    &:active {
+        transform: translateY(-.2rem);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
+    
+    &--white {
+        color: $color-grey-dark;
+        background-color: $color-white;
+    }
+
+    &--green {
+        color: $color-white;
+        background-color: $color-primary;
+
+        &:after {
+            background-color: $color-primary;
+        }
+
+    }
+
+    &--inline {
+        color: $color-primary;
+        font-size: 1.5rem;
+        text-decoration: none;
+        padding: .7rem 1rem;
+        border-bottom: 1px solid $color-primary;
+        display: inline-block;
+        justify-self: start;
+        transition: all .2s;
+
+        &:hover {
+            background-color: $color-primary;
+            color: $color-white;
+            transform: translateY(-.3rem);
+            box-shadow: 0 1rem 2rem rgba($color-black, .2);
+        }
+    }
+
+    &--animated {
+        animation: moveInTop .9s ease-in-out .5s backwards; 
+        
+        @include respond(450px) {
+            animation: moveInTop .8s ease-in-out .3s backwards; 
+        }
+
+        @include respond(xsmall-phone) {
+            animation: none;
+        }
+    }
+}
+
+ 
+   
+    
+    
