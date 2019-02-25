@@ -15,8 +15,7 @@
   "author": "Raymond",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^4.9.0",
-    "cryptiles": ">=4.1.2"
+    "node-sass": "^4.9.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
